@@ -10,6 +10,9 @@ namespace _2DArrays
     {
         static void Main(string[] args)
         {
+            //Random numbers
+            Random rand = new Random();
+
             //1d array
             int[] oneD = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -22,6 +25,19 @@ namespace _2DArrays
             testarray[0, 1] = 1;
             testarray[1, 0] = 2;
             testarray[1, 1] = 3;
+            //Display this array
+            Console.WriteLine("Test array:");
+            Display(testarray);
+            //Auto populated
+            for (int i = 0; i < testarray.GetLength(0); i++)//Row
+            {
+                for (int j = 0; j < testarray.GetLength(1); j++)//Column
+                {
+                    //gets the coordinates by using the counters from the external and internal loops.
+                    testarray[i, j] =  rand.Next(0,100);
+                }
+                Console.WriteLine();
+            }
             //Display this array
             Console.WriteLine("Test array:");
             Display(testarray);
